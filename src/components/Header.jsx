@@ -8,15 +8,42 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assests//logo.svg";
+import { auth, provider } from "../firebase";
+import { addUser, logOutUser } from "../redux/userSlice";
+
 const Header = () => {
+  const { name, pic } = useSelector((state) => state.userReducer);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleClick = () => {
-    console.log("done");
     document.getElementById("list").classList.toggle("show");
   };
+  const handleAuth = async () => {
+    await auth
+      .signInWithPopup(provider)
+      .then((res) => {
+        dispatch(addUser(res.user));
+      })
+      .catch((err) => alert(err.message));
+  };
+  const handleLogOut = () => {
+    auth.signOut();
+    dispatch(logOutUser());
+    navigate("/");
+  };
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(addUser(user));
+        navigate("/home");
+      }
+    });
+  }, []);
   return (
     <ZHeader>
       <Link to="/">
@@ -54,8 +81,18 @@ const Header = () => {
           </Link>
         </ListItem>
       </List>
+      {name !== "" ? (
+        <SignInPic onClick={handleLogOut}>
+          <img
+            src={pic}
+            alt="..."
+            style={{ width: "75px", height: "75px", borderRadius: "50%" }}
+          />
+        </SignInPic>
+      ) : (
+        <LoginButton onClick={handleAuth}> Login </LoginButton>
+      )}
 
-      <LoginButton> Login </LoginButton>
       <ListIcon onClick={handleClick}>
         <FontAwesomeIcon icon={faBars} />
       </ListIcon>
@@ -82,16 +119,17 @@ const HeaderLogo = styled.img`
 `;
 const LoginButton = styled.div`
   border: 1px solid gray;
-  background-color: transparent;
+  background: transparent;
   padding: 20px 30px;
   border-radius: 10px;
-  transition: 0.3s;
   font-weight: 700;
   letter-spacing: 3px;
   margin-right: 10px;
   cursor: pointer;
+  transition: all 0.5s;
   &:hover {
-    background-color: gray;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    box-shadow: 0 0 20px 9px #0063e582;
   }
 `;
 const List = styled.ul`
@@ -139,5 +177,28 @@ const ListIcon = styled.p`
     position: absolute;
     bottom: -20px;
     left: 30px;
+  }
+`;
+const SignInPic = styled.div`
+  cursor: pointer;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "Sign Out";
+    bottom: -19px;
+    left: -56px;
+    background: #0063e5;
+    color: white;
+    -webkit-transition: all 0.3s;
+    transition: all 0.5s;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    opacity: 0;
+  }
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
   }
 `;

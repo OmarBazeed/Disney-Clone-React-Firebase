@@ -42,6 +42,7 @@ const Button = styled.div`
   border: 1px solid transparent;
   border-radius: 4px;
   transition: 0.5s;
+  margin-top: 10px;
 
   &:hover {
     background-color: #0483ee;
