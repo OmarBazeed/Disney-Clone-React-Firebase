@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <ZHeader>
       <Link to="/">
-        <HeaderLogo src={Logo} />
+        <HeaderLogo src={Logo} alt="logo" />
       </Link>
       <List id="list">
         <ListItem>
@@ -116,6 +116,7 @@ const HeaderLogo = styled.img`
   height: 100px;
   width: 100px;
   margin-left: 10px;
+  filter: drop-shadow(5px 5px 10px white);
 `;
 const LoginButton = styled.div`
   border: 1px solid gray;

@@ -3,6 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
+import SliderImg1 from "../assests/slider-badag.jpg";
+import SliderImg2 from "../assests/slider-badging.jpg";
+import SliderImg3 from "../assests/slider-scale.jpg";
+import SliderImg4 from "../assests/slider-scales.jpg";
 
 const ImgSlider = () => {
   let settings = {
@@ -15,15 +19,18 @@ const ImgSlider = () => {
   };
   return (
     <Carousel {...settings}>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
+      <Warp>
+        <Img src={SliderImg1} alt="slider-pic" />
+      </Warp>
+      <Warp>
+        <Img src={SliderImg2} alt="slider-pic" />
+      </Warp>
+      <Warp>
+        <Img src={SliderImg3} alt="slider-pic" />
+      </Warp>
+      <Warp>
+        <Img src={SliderImg4} alt="slider-pic" />
+      </Warp>
     </Carousel>
   );
 };
@@ -59,5 +66,20 @@ const Carousel = styled(Slider)`
   }
   .slick-next {
     right: -75px;
+  }
+`;
+
+const Warp = styled.div`
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  cursor: pointer;
+`;
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  &:hover {
+    border: 4px solid gray;
   }
 `;

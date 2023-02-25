@@ -6,10 +6,12 @@ import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import userSlice from "./redux/userSlice";
+import movieSlice from "./redux/movieSlice";
 
 const store = configureStore({
   reducer: {
     userReducer: userSlice,
+    movieReducer: movieSlice,
   },
 });
 
