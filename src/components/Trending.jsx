@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import rec1 from "../assests/viewers-national.png";
+
 const Trending = () => {
+  const { trending } = useSelector((state) => state.movieReducer);
   return (
     <div style={{ marginTop: "40px" }}>
       <h4
@@ -16,26 +18,14 @@ const Trending = () => {
         Trending...
       </h4>
       <Container>
-        <Content>
-          <Link to="">
-            <img src={rec1} alt="recommand-img" />
-          </Link>
-        </Content>
-        <Content>
-          <Link to="">
-            <img src={rec1} alt="recommand-img" />
-          </Link>
-        </Content>
-        <Content>
-          <Link to="">
-            <img src={rec1} alt="recommand-img" />
-          </Link>
-        </Content>
-        <Content>
-          <Link to="">
-            <img src={rec1} alt="recommand-img" />
-          </Link>
-        </Content>
+        {trending &&
+          trending.map((movie) => (
+            <Content key={movie.id}>
+              <Link to={`/detail/` + movie.id}>
+                <img src={movie.cardImg} alt="" />
+              </Link>
+            </Content>
+          ))}
       </Container>
     </div>
   );
@@ -45,9 +35,9 @@ export default Trending;
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 25px;
-  @media (max-width: 540px) {
+  @media (max-width: 768px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   margin-bottom: 10px;

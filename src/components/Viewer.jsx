@@ -34,15 +34,15 @@ const Viewer = () => {
         </Video>
       </Content>
       <Content>
-        <Img src={Viewer4} alt="viewerImg" />{" "}
+        <Img src={Viewer4} alt="viewerImg" />
         <Video autoPlay={true} loop={true} playsInline={true}>
-          <source src={DisneyV4} type="video/mp4" />{" "}
+          <source src={DisneyV4} type="video/mp4" />
         </Video>
       </Content>
       <Content>
-        <Img src={Viewer5} alt="viewerImg" />{" "}
+        <Img src={Viewer5} alt="viewerImg" />
         <Video autoPlay={true} loop={true} playsInline={true}>
-          <source src={DisneyV5} type="video/mp4" />{" "}
+          <source src={DisneyV5} type="video/mp4" />
         </Video>
       </Content>
     </Container>
@@ -74,10 +74,10 @@ const Content = styled.div`
   overflow: hidden;
   transition: all 0.3s linear;
   &:hover {
-    box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
-      rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5),
+      0px 5px 5px 5px rgba(0, 0, 0, 0.8);
+    border-color: rgba(225, 225, 225, 0.5);
     transform: scale(1.05);
-    border-color: rgba(249, 249, 249, 0.5);
     video {
       opacity: 1;
     }
@@ -99,9 +99,7 @@ const Video = styled.video`
   left: 0;
   width: 100%;
   height: 100%;
-  height: 200px;
-  z-index: 1;
-  transform: scale(2.2);
+  z-index: 0;
   opacity: 0;
   transition: all 0.4s ease;
 `;
