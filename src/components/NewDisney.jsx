@@ -46,6 +46,7 @@ const Content = styled.div`
   border-radius: 15px;
   padding: 5px;
   transition: all 0.3s ease-in-out;
+  animation: fadeInRightBig 1.8s 1s linear both;
   img {
     width: 100%;
     height: 100%;

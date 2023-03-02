@@ -5,6 +5,7 @@ import db from "../firebase";
 import playerPic1 from "../assests/play-icon-black.png";
 import playerPic2 from "../assests/play-icon-white.png";
 import groupImg from "../assests/group-icon.png";
+
 const Details = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState({});
@@ -28,6 +29,7 @@ const Details = () => {
       <ImageTitle>
         <img alt="" src={movieData.titleImg} />
       </ImageTitle>
+
       <ContentMeta>
         <Controls>
           <Player>
@@ -70,11 +72,12 @@ const Background = styled.div`
   opacity: 0.8;
   position: fixed;
   right: 0px;
-  top: 0px;
+  top: 115px;
   z-index: -1;
   img {
     width: 100vw;
     height: 100vh;
+    // filter: grayscale(15%);
     @media (max-width: 768px) {
       width: initial;
     }

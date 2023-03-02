@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 import CtaLogo from "../assests/cta-logo-one.svg";
 import CtaLogo2 from "../assests/cta-logo-two.png";
 import BackgroundImg from "../assests/login-background.jpg";
 const Login = () => {
+  const { pic } = useSelector((state) => state.userReducer);
+
+  useEffect(() => {
+    if (pic === "") {
+      Swal.fire({
+        title: `<div> 
+        <span style="color:#F9B300;font-size:20px">Hint!</span> <span style="color:black;font-size:18px;font-weight:normal"> You Have To Login To Go For Movies </span>
+        </div>`,
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+    }
+  });
   return (
     <Conatiner>
       <Content>
         <Ct src={CtaLogo} alt="cta-logo" />
-        <Link to="/home">
+        <Link to={pic && "/home"}>
           <Button>GET ALL THERE</Button>
         </Link>
         <Description>

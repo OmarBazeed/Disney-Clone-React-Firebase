@@ -7,6 +7,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import userSlice from "./redux/userSlice";
 import movieSlice from "./redux/movieSlice";
+import "animate.css";
 
 const store = configureStore({
   reducer: {

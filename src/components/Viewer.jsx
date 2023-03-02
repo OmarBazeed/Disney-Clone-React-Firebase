@@ -73,6 +73,7 @@ const Content = styled.div`
   height: 200px;
   overflow: hidden;
   transition: all 0.3s linear;
+  animation: fadeInDownBig 1.8s 0.5s linear both;
   &:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5),
       0px 5px 5px 5px rgba(0, 0, 0, 0.8);
