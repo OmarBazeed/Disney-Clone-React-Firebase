@@ -1,41 +1,36 @@
-##  Disney Clone `React` , `firebase` , `redux-toolkit` and `styled-components`  :
- + Creating An Amazon Clone With `React`==>(frontend) And `firebase`==>(backend) And `stripe`==> **(For Adding Payment Method)**
- + Using Stipe And Stripe-js For Activating The Payment Methods Using Some `stripe` Functions()
- + Using React and Contxt API As A frontend Role 
- + Using Firebase With ( `axios` )for Authentication And Data Base For The Application As A Backend Role
- + Fully Responsive App Smoothly Using `tailwind`
- + Using `sweetalert` , `sweetalert2` , `memo` , `shortid` , `animate.css`  For Beatify The App
+##  Disney Clone `React` , `firebase` , `@reduxjs/toolkit` and `styled-components`  :
+ + Using `react-redux` and `@reduxjs/toolkit` ==> For Sharing Data Between Different Pages... 
+ + Using `firebase` and firestore() , auth() ==> For Singing In And Using database  
+ + Using `styled-components` ==> For Styling The Application And Making It Fully Responsive 
+ + Using `sweetalert` , `sweetalert2` , `animate.css`  For Beautify The App
  + Go And Take A Look Then Go For Coding...
  ---------------------------------------------------------------------------------------------------------------
  ### Installation Requierments :
  ```
  npm i --save 
-             stripe @stripe/stripe-js @stripe/react-stripe-js
-             firebase axios
-             tailwind -D npx tailwindcss init
-             sweetalert sweetalert2 memo shortid animate.css
+             react-redux  @reduxjs/toolkit 
+             firebase 
+             styled-components
+             sweetalert sweetalert2 animate.css
              react-router-dom
    ``` 
   ---------------------------------------------------------------------------------------------------------------
  ### Live Demo : 
- [Full-Stack Amazon Clone](https://ob-full-stack-amazon-clone.onrender.com)
+ [Disney-Clone-React](https://ob-disney-clone-firebase.onrender.com)
  
  ---------------------------------------------------------------------------------------------------------------
  ### Live Pictures :
  <div>
- <img src='https://user-images.githubusercontent.com/114960595/219815623-e7c58584-f849-49f6-93d2-4d75d0594499.png' />
+ <img src='https://user-images.githubusercontent.com/114960595/222830373-6ceba123-f34b-4b73-93d7-25dcf8a7933c.png' />
  <br />
- <img src='https://user-images.githubusercontent.com/114960595/219815543-89406939-ea21-4246-835b-fef71f040e0b.png' />
+ <img src='https://user-images.githubusercontent.com/114960595/222830408-c47d7793-2d98-41f2-9634-d94dcc76c337.png' />
   <br />
- <img src='https://user-images.githubusercontent.com/114960595/219815544-3b7f5c95-313b-4768-8389-b500615c4be9.png' />
+ <img src='https://user-images.githubusercontent.com/114960595/222830515-db7511c3-d3ad-4e8e-bf57-59e90eaaa103.png' />
   <br />
- <img src='https://user-images.githubusercontent.com/114960595/219815563-f472e978-bf69-4fd4-b77d-2312000139a8.png' />
+ <img src='https://user-images.githubusercontent.com/114960595/222830570-7257e6f8-4d84-4e70-bed0-0c4e19c2dc04.png' />
   <br />
- <img src='https://user-images.githubusercontent.com/114960595/219815576-b1670210-1310-4561-b45f-e77639fb9f89.png' />
+ <img src='https://user-images.githubusercontent.com/114960595/222830617-c75c1bbd-7a53-44ff-83e2-3e1860ba17a0.png' />
  <br />
  <img src='https://user-images.githubusercontent.com/114960595/219815583-120eda69-e6e7-4961-b708-98b632960ebb.png' />
  <br />
- <br />
- <h4> Stripe Concept ==> How Stripe Works </h4>
- <img src='https://user-images.githubusercontent.com/114960595/219816202-282bf8bd-31e3-472f-82cb-2dd9edb8aad2.png' />
  </div>
