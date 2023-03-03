@@ -1,4 +1,4 @@
-##  Disney Clone `React` , `firebase` , `@reduxjs/toolkit` and `styled-components`  :
+##  Disney Clone App With `React` , `firebase` , `@reduxjs/toolkit` and `styled-components`  :
  + Using `react-redux` and `@reduxjs/toolkit` ==> For Sharing Data Between Different Pages... 
  + Using `firebase` and firestore() , auth() ==> For Singing In And Using database  
  + Using `styled-components` ==> For Styling The Application And Making It Fully Responsive 
@@ -23,14 +23,19 @@
  <div>
  <img src='https://user-images.githubusercontent.com/114960595/222830373-6ceba123-f34b-4b73-93d7-25dcf8a7933c.png' />
  <br />
+ <br />
  <img src='https://user-images.githubusercontent.com/114960595/222830408-c47d7793-2d98-41f2-9634-d94dcc76c337.png' />
+  <br />
   <br />
  <img src='https://user-images.githubusercontent.com/114960595/222830515-db7511c3-d3ad-4e8e-bf57-59e90eaaa103.png' />
   <br />
+  <br />
  <img src='https://user-images.githubusercontent.com/114960595/222830570-7257e6f8-4d84-4e70-bed0-0c4e19c2dc04.png' />
+  <br />
   <br />
  <img src='https://user-images.githubusercontent.com/114960595/222830617-c75c1bbd-7a53-44ff-83e2-3e1860ba17a0.png' />
  <br />
- <img src='https://user-images.githubusercontent.com/114960595/219815583-120eda69-e6e7-4961-b708-98b632960ebb.png' />
+ <br />
+ <img src='https://user-images.githubusercontent.com/114960595/222831551-62ba54e9-a25b-42f1-baa5-ceaa17fda05a.png' />
  <br />
  </div>
