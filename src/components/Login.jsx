@@ -31,7 +31,7 @@ const Login = () => {
     <Conatiner>
       <Content>
         <Ct src={CtaLogo} alt="cta-logo" />
-        <Link to={pic && "/home"}>
+        <Link to="/home">
           <Button>GET ALL THERE</Button>
         </Link>
         <Description>
