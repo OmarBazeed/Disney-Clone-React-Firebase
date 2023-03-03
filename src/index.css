@@ -1,47 +1,53 @@
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Avenir-Roman, sans-serif;
-  background-color: #040714;
-  color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-family: Avenir-Roman, sans-serif;
+    background-color: #040714;
+    color: #f9f9f9;
 }
 
 a {
-  text-decoration: none;
-  color: #f9f9f9;
+    text-decoration: none;
+    color: #f9f9f9;
 }
 
 @media screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
+    body {
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
+    body {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 479px) {
-  body {
-    font-size: 13px;
-  }
+    body {
+        font-size: 13px;
+    }
 }
 
 .show {
-  position: absolute;
-  bottom: -80px;
-  display: flex !important;
-  flex-wrap: wrap;
-  height: 70px;
-  left: -50px;
+    position: absolute;
+    bottom: -335px;
+    display: flex !important;
+    flex-direction: column;
+    left: -54px;
+    z-index: 999;
+    height: 318px;
+    background-color: rgb(0 0 0 / 40%);
+    justify-content: space-between;
+    text-align: left !important;
+    align-items: flex-start !important;
+    animation: fadeInRightBig 1.5s linear both;
 }

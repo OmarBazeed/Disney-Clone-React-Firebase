@@ -12,6 +12,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 import Logo from "../assests//logo.svg";
 import { auth, provider } from "../firebase";
 import { addUser, logOutUser } from "../redux/userSlice";
@@ -43,15 +44,39 @@ const Header = () => {
         navigate("/home");
       }
     });
+
+    const List = document.getElementById("list");
+    const elements = document.querySelectorAll("li");
+    elements.forEach((element) => {
+      element.addEventListener("click", () => {
+        List.classList.remove("show");
+      });
+    });
   }, []);
+  const handleHome = () => {
+    pic
+      ? navigate("/home")
+      : Swal.fire({
+          title: `<div> 
+                      <span style="color:#F9B300;font-size:20px">Hint!</span> <span style="color:black;font-size:18px;font-weight:normal"> You Have To Login To Go For Movies 
+                      </span>
+                  </div>`,
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+  };
   return (
     <ZHeader>
       <Link to="/">
         <HeaderLogo src={Logo} alt="logo" />
       </Link>
       <List id="list">
-        <ListItem>
-          <Link to="/home">
+        <ListItem onClick={handleHome}>
+          <Link to={pic && "/home"}>
             <FontAwesomeIcon icon={faHome} /> Home
           </Link>
         </ListItem>
@@ -93,7 +118,7 @@ const Header = () => {
         <LoginButton onClick={handleAuth}> Login </LoginButton>
       )}
 
-      <ListIcon onClick={handleClick}>
+      <ListIcon onClick={handleClick} id="menu">
         <FontAwesomeIcon icon={faBars} />
       </ListIcon>
     </ZHeader>
@@ -168,11 +193,18 @@ const ListItem = styled.li`
     color: #0483ee;
     margin-right: 5px;
   }
+  @media screen and (max-width: 500px) {
+    font-size: 13px !important;
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 15px;
+  }
 `;
 const ListIcon = styled.p`
   display: none;
   font-size: 20px;
   cursor: pointer;
+  z-index: 1000;
   @media screen and (max-width: 991px) {
     display: block;
     position: absolute;
@@ -183,6 +215,9 @@ const ListIcon = styled.p`
 const SignInPic = styled.div`
   cursor: pointer;
   position: relative;
+  margin-right: 10px;
+  box-shadow: 1px 1px 20px 0px #ff253a;
+  border-radius: 50%;
   &::before {
     position: absolute;
     content: "Sign Out";

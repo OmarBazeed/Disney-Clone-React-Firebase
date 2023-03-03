@@ -7,7 +7,7 @@ import Login from "./components/Login";
 
 const App = () => {
   return (
-    <div>
+    <div style={{ over: "hidden" }}>
       <Header />
       <Routes>
         <Route exact path="/" element={<Login />} />

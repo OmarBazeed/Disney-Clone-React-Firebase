@@ -6,23 +6,26 @@ import Swal from "sweetalert2";
 import CtaLogo from "../assests/cta-logo-one.svg";
 import CtaLogo2 from "../assests/cta-logo-two.png";
 import BackgroundImg from "../assests/login-background.jpg";
+import { auth } from "../firebase";
 const Login = () => {
   const { pic } = useSelector((state) => state.userReducer);
 
   useEffect(() => {
-    if (pic === "") {
-      Swal.fire({
-        title: `<div> 
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        Swal.fire({
+          title: `<div> 
         <span style="color:#F9B300;font-size:20px">Hint!</span> <span style="color:black;font-size:18px;font-weight:normal"> You Have To Login To Go For Movies </span>
         </div>`,
-        showClass: {
-          popup: "animate__animated animate__fadeInDown",
-        },
-        hideClass: {
-          popup: "animate__animated animate__fadeOutUp",
-        },
-      });
-    }
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+      }
+    });
   });
   return (
     <Conatiner>
@@ -45,6 +48,12 @@ const Login = () => {
 export default Login;
 const Ct = styled.img`
   max-width: 650px;
+  @media (max-width: 500px) {
+    width: 300px !important;
+  }
+  @media (max-width: 768px) {
+    width: 500px;
+  }
 `;
 
 const Button = styled.div`
@@ -66,15 +75,33 @@ const Button = styled.div`
   &:hover {
     background-color: #0483ee;
   }
+  @media (max-width: 500px) {
+    width: 300px !important;
+  }
+  @media (max-width: 768px) {
+    width: 500px;
+  }
 `;
 const Description = styled.div`
   max-width: 650px;
   margin: 20px 0;
   word-spacing: 4px;
   font-style: italic;
+  @media (max-width: 500px) {
+    width: 300px !important;
+  }
+  @media (max-width: 768px) {
+    width: 500px;
+  }
 `;
 const CtLogoTwo = styled.img`
   max-width: 650px;
+  @media (max-width: 500px) {
+    width: 300px !important;
+  }
+  @media (max-width: 768px) {
+    width: 500px;
+  }
 `;
 const Conatiner = styled.div`
   display: flex;
